@@ -55,11 +55,13 @@ function agecal() {
     var daydiff = mathfloor(hoursdiff, 24);
     console.log(daydiff);
 
+
     var yeardiff = getYear(inputdate, currentdate);
     console.log(yeardiff);
 
     var monthdiff = getMonth(inputdate, currentdate);
     console.log(monthdiff);
+
 
     dd.innerHTML = `given input date is:${inputdate}<br>
 year : ${yeardiff}<br>
@@ -83,15 +85,16 @@ function mathfloor(value1, value2) {
   return Math.floor(value1 / value2);
 }
 
+
 function getYear(value1, value2) {
   var date1 = new Date(value1);
   var date2 = new Date(value2);
-  return date2.getFullYear() - date1.getFullYear;
+  return date2.getFullYear()-date1.getFullYear();
 }
 
 function getMonth(value1, value2) {
   var year = getYear(value1, value2);
-  var month = year * 12 + (value2.getMonth() - value1.getMonth());
+  var month = (year * 12) + (value2.getMonth()-value1.getMonth());
   return month;
 }
 // document.body.append(pdiv);
